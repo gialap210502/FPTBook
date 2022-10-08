@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MvcFPTBook.Models;
 
+namespace MvcFPTBook.Data;
     public class MvcBookContext : DbContext
     {
         public MvcBookContext (DbContextOptions<MvcBookContext> options)

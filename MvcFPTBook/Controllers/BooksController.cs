@@ -5,17 +5,21 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
 using MvcFPTBook.Models;
+using MvcFPTBook.Data;
 
 namespace MvcFPTBook.Controllers
 {
     public class BooksController : Controller
     {
         private readonly MvcBookContext _context;
+        private readonly IWebHostEnvironment hostEnvironment;
 
-        public BooksController(MvcBookContext context)
+        public BooksController(MvcBookContext context,IWebHostEnvironment environment)
         {
             _context = context;
+            hostEnvironment = environment;
         }
 
         // GET: Books
@@ -51,7 +55,7 @@ namespace MvcFPTBook.Controllers
         {
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name");
             ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Name");
-            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Address");
+            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Name");
             return View();
         }
 
@@ -60,17 +64,26 @@ namespace MvcFPTBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Poster,publiccationDate,Price,AuthorID,CategoryID,PublisherID")] Book book)
+        public async Task<IActionResult> Create([Bind("Id,Name,Poster,publiccationDate,Price,AuthorID,CategoryID,PublisherID")] Book book,IFormFile myfile)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
+                string filename=Path.GetFileName(myfile.FileName);
+                var filePath = Path.Combine(hostEnvironment.WebRootPath, "uploads");
+                string fullPath=filePath+"\\"+filename;
+                // Copy files to FileSystem using Streams
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {	
+                    await myfile.CopyToAsync(stream);
+                    }
+                book.Poster=filename;
                 _context.Add(book);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name", book.AuthorID);
             ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Name", book.CategoryID);
-            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Address", book.PublisherID);
+            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Name", book.PublisherID);
             return View(book);
         }
 
@@ -89,7 +102,7 @@ namespace MvcFPTBook.Controllers
             }
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name", book.AuthorID);
             ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Name", book.CategoryID);
-            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Address", book.PublisherID);
+            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Name", book.PublisherID);
             return View(book);
         }
 
@@ -127,7 +140,7 @@ namespace MvcFPTBook.Controllers
             }
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name", book.AuthorID);
             ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Name", book.CategoryID);
-            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Address", book.PublisherID);
+            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Name", book.PublisherID);
             return View(book);
         }
 
