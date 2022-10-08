@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lap\\Desktop\\Application Development\\MvcFPTBook\\MvcFPTBook.csproj": {}
+    "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lap\\Desktop\\Application Development\\MvcFPTBook\\MvcFPTBook.csproj": {
+    "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lap\\Desktop\\Application Development\\MvcFPTBook\\MvcFPTBook.csproj",
+        "projectUniqueName": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj",
         "projectName": "MvcFPTBook",
-        "projectPath": "C:\\Users\\Lap\\Desktop\\Application Development\\MvcFPTBook\\MvcFPTBook.csproj",
+        "projectPath": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj",
         "packagesPath": "C:\\Users\\Lap\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lap\\Desktop\\Application Development\\MvcFPTBook\\obj\\",
+        "outputPath": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,26 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SQLite": {
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

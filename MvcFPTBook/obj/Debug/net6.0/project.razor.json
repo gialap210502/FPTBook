@@ -16298,6 +16298,21 @@
   "RootNamespace": "MvcFPTBook",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Categorys\\Index.cshtml",
+      "TargetPath": "Views\\Categorys\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Books\\Edit.cshtml",
+      "TargetPath": "Views\\Books\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\OrderDetails\\Edit.cshtml",
+      "TargetPath": "Views\\OrderDetails\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -16308,13 +16323,128 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Authors\\Create.cshtml",
+      "TargetPath": "Views\\Authors\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Books\\Delete.cshtml",
+      "TargetPath": "Views\\Books\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Categorys\\Delete.cshtml",
+      "TargetPath": "Views\\Categorys\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Users\\Create.cshtml",
+      "TargetPath": "Views\\Users\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Authors\\Index.cshtml",
+      "TargetPath": "Views\\Authors\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\OrderDetails\\Delete.cshtml",
+      "TargetPath": "Views\\OrderDetails\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Books\\Create.cshtml",
+      "TargetPath": "Views\\Books\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Users\\Edit.cshtml",
+      "TargetPath": "Views\\Users\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Orders\\Index.cshtml",
+      "TargetPath": "Views\\Orders\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Publishers\\Create.cshtml",
+      "TargetPath": "Views\\Publishers\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Categorys\\Create.cshtml",
+      "TargetPath": "Views\\Categorys\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\OrderDetails\\Details.cshtml",
+      "TargetPath": "Views\\OrderDetails\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Publishers\\Details.cshtml",
+      "TargetPath": "Views\\Publishers\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Books\\Details.cshtml",
+      "TargetPath": "Views\\Books\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Users\\Index.cshtml",
+      "TargetPath": "Views\\Users\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Authors\\Delete.cshtml",
+      "TargetPath": "Views\\Authors\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Categorys\\Details.cshtml",
+      "TargetPath": "Views\\Categorys\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Orders\\Details.cshtml",
+      "TargetPath": "Views\\Orders\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Categorys\\Edit.cshtml",
+      "TargetPath": "Views\\Categorys\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Orders\\Edit.cshtml",
+      "TargetPath": "Views\\Orders\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Publishers\\Index.cshtml",
+      "TargetPath": "Views\\Publishers\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Publishers\\Delete.cshtml",
+      "TargetPath": "Views\\Publishers\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Publishers\\Edit.cshtml",
+      "TargetPath": "Views\\Publishers\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16328,8 +16458,53 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Authors\\Edit.cshtml",
+      "TargetPath": "Views\\Authors\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\OrderDetails\\Index.cshtml",
+      "TargetPath": "Views\\OrderDetails\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Authors\\Details.cshtml",
+      "TargetPath": "Views\\Authors\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Orders\\Create.cshtml",
+      "TargetPath": "Views\\Orders\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\OrderDetails\\Create.cshtml",
+      "TargetPath": "Views\\OrderDetails\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Orders\\Delete.cshtml",
+      "TargetPath": "Views\\Orders\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Books\\Index.cshtml",
+      "TargetPath": "Views\\Books\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Users\\Details.cshtml",
+      "TargetPath": "Views\\Users\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\Views\\Users\\Delete.cshtml",
+      "TargetPath": "Views\\Users\\Delete.cshtml",
       "FileKind": "mvc"
     }
   ],
