@@ -1,21 +1,26 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MvcFPTBook.Models;
+using MvcFPTBook.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace MvcFPTBook.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly MvcBookContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, MvcBookContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var mvcBookContext = _context.Book.Include(b => b.Author).Include(b => b.Category).Include(b => b.Publishers);
+        return View(await mvcBookContext.ToListAsync());
     }
 
     public IActionResult Privacy()

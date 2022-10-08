@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dLk+oeO9/EJdIe+bFPOIBX3sSrCKJwt3WaA4A/IPNKQ=",
+  "Hash": "iZ8Hs/NSOlEVGPe5yD46vmltJU8uC0S7TljH68t4AUg=",
   "Source": "MvcFPTBook",
   "BasePath": "_content/MvcFPTBook",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\wwwroot\\uploads\\IMG_6239.JPG",
+      "SourceId": "MvcFPTBook",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\wwwroot\\",
+      "BasePath": "_content/MvcFPTBook",
+      "RelativePath": "uploads/IMG_6239.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\IMG_6239.JPG"
     }
   ]
 }
