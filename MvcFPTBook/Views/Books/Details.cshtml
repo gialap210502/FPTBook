@@ -57,4 +57,11 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
+    <form asp-action="AddTicket" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <input type="hidden" name="name" value="@Model.Name" />
+        <input type="hidden" name="price" value="@Model.Price" />
+        <input type="number" name="quantity" min=1 value=1 />
+        <input type="submit" value="Add To Cart" class="btn btn-primary" />
+    </form>
 </div>
