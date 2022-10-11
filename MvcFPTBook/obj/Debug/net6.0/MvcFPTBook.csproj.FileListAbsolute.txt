@@ -308,3 +308,4 @@ C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\obj\Debug\net6.0\refint\MvcFPTB
 C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\obj\Debug\net6.0\MvcFPTBook.pdb
 C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\obj\Debug\net6.0\MvcFPTBook.genruntimeconfig.cache
 C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\obj\Debug\net6.0\ref\MvcFPTBook.dll
+C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\obj\Debug\net6.0\scopedcss\Views\Home\Details.cshtml.rz.scp.css

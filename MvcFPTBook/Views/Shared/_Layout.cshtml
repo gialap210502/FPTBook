@@ -2,7 +2,7 @@
 @using Newtonsoft.Json
 @using Microsoft.AspNetCore.Http;
 
-@{
+@* @{
     var data = Context.Session.GetString("cart");
 
     int coutCart = 0;
@@ -13,14 +13,14 @@
     else
     {
         var data2 = Context.Session.GetString("cart");
-        var dataCart = JsonConvert.DeserializeObject<List<OrderDetail>>(data2);
+        var dataCart = JsonConvert.DeserializeObject<List<CartItem>>(data2);
         foreach (var item in dataCart)
         {
             coutCart += item.Quantity;
         }
 
     }
-}
+} *@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +55,7 @@
                 </div>
                 <a asp-area="" asp-controller="Books" asp-action="Checkout" style="padding:10px;">
                     <img src="~/images/cart.png" style="width:25px !important;height:25px;display:inline-block;" />
-                    @coutCart 
+                    @* @coutCart  *@
                 </a>
             </div>
         </nav>

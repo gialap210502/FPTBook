@@ -22,6 +22,7 @@ public class HomeController : Controller
         var mvcBookContext = _context.Book.Include(b => b.Author).Include(b => b.Category).Include(b => b.Publishers);
         return View(await mvcBookContext.ToListAsync());
     }
+    
 
     public IActionResult Privacy()
     {
@@ -32,5 +33,24 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    public async Task<IActionResult> Details(int? id)
+    {
+        if (id == null || _context.Book == null)
+        {
+            return NotFound();
+        }
+
+        var book = await _context.Book
+            .Include(b => b.Author)
+            .Include(b => b.Category)
+            .Include(b => b.Publishers)
+            .FirstOrDefaultAsync(m => m.Id == id);
+        if (book == null)
+        {
+            return NotFound();
+        }
+
+        return View(book);
     }
 }
