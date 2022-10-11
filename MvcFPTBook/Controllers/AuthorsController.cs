@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using MvcFPTBook.Data;
 using MvcFPTBook.Models;
 
@@ -159,5 +161,33 @@ namespace MvcFPTBook.Controllers
         {
           return (_context.Author?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+        public IActionResult ExportAuthorList()
+        {
+            //get data from database using EF
+            List<Author> authors= _context.Author.ToList<Author>();
+            var stream = new MemoryStream();
+            using (var xlPackage = new ExcelPackage(stream))
+            {
+                var worksheet = xlPackage.Workbook.Worksheets.Add("Authors");
+                
+                worksheet.Cells["A1"].Value = "Author List of FPT Book System";
+                worksheet.Cells["A3"].Value = "ID";
+                worksheet.Cells["B3"].Value = "Name";
+                
+                int row=4;
+                foreach (var author in authors)
+                {
+                    worksheet.Cells[row,1].Value=author.Id;
+                    worksheet.Cells[row,2].Value=author.Name;
+                    row++;
+                }
+                xlPackage.Save();
+            }
+            stream.Position = 0;
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "genres.xlsx");
+        
+        }
+
     }
 }
