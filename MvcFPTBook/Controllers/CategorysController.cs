@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcFPTBook.Data;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using MvcFPTBook.Models;
 
 namespace MvcFPTBook.Controllers
@@ -158,6 +160,32 @@ namespace MvcFPTBook.Controllers
         private bool CategoryExists(int id)
         {
           return (_context.Category?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+        public IActionResult ExportCategoryList()
+        {
+            //get data from database using EF
+            List<Category> categories= _context.Category.ToList<Category>();
+            var stream = new MemoryStream();
+            using (var xlPackage = new ExcelPackage(stream))
+            {
+                var worksheet = xlPackage.Workbook.Worksheets.Add("Categories");
+                
+                worksheet.Cells["A1"].Value = "Category List of FPT Book System";
+                worksheet.Cells["A3"].Value = "ID";
+                worksheet.Cells["B3"].Value = "Name";
+                
+                int row=4;
+                foreach (var category in categories)
+                {
+                    worksheet.Cells[row,1].Value=category.Id;
+                    worksheet.Cells[row,2].Value=category.Name;
+                    row++;
+                }
+                xlPackage.Save();
+            }
+            stream.Position = 0;
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "genres.xlsx");
+        
         }
     }
 }

@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using MvcFPTBook.Data;
 using MvcFPTBook.Models;
 
@@ -158,6 +160,39 @@ namespace MvcFPTBook.Controllers
         private bool PublisherExists(int id)
         {
           return (_context.Publisher?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+
+        public IActionResult ExportPublicsherList()
+        {
+            //get data from database using EF
+            List<Publisher> publishers= _context.Publisher.ToList<Publisher>();
+            var stream = new MemoryStream();
+            using (var xlPackage = new ExcelPackage(stream))
+            {
+                var worksheet = xlPackage.Workbook.Worksheets.Add("Publishers");
+                
+                worksheet.Cells["A1"].Value = "Category List of FPT Book System";
+                worksheet.Cells["A3"].Value = "ID";
+                worksheet.Cells["B3"].Value = "Name";
+                worksheet.Cells["C3"].Value = "Address";
+                worksheet.Cells["D3"].Value = "Phone";
+
+                
+                int row=4;
+                foreach (var publisher in publishers)
+                {
+                    worksheet.Cells[row,1].Value=publisher.Id;
+                    worksheet.Cells[row,2].Value=publisher.Name;
+                    worksheet.Cells[row,3].Value=publisher.Address;
+                    worksheet.Cells[row,4].Value=publisher.Phone;
+
+                    row++;
+                }
+                xlPackage.Save();
+            }
+            stream.Position = 0;
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "genres.xlsx");
+        
         }
     }
 }

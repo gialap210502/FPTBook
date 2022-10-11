@@ -12,7 +12,7 @@ using MvcFPTBook.Data;
 namespace MvcFPTBook.Migrations
 {
     [DbContext(typeof(MvcBookContext))]
-    [Migration("20221010084908_InitialCreate")]
+    [Migration("20221011005459_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

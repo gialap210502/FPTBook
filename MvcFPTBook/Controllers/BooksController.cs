@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using MvcFPTBook.Models;
 using MvcFPTBook.Data;
 using MvcFPTBook.Utils;
@@ -253,6 +255,47 @@ namespace MvcFPTBook.Controllers
             HttpContext.Session.SetObject("cart",cart);
             
             return RedirectToAction("CheckOut", "Books");
+        }
+
+        public IActionResult ExportBookList()
+        {
+            //get data from database using EF
+            List<Book> books= _context.Book.ToList<Book>();
+            var stream = new MemoryStream();
+            using (var xlPackage = new ExcelPackage(stream))
+            {
+                var worksheet = xlPackage.Workbook.Worksheets.Add("Books");
+                
+                worksheet.Cells["A1"].Value = "Book List of FPT Book System";
+                worksheet.Cells["A3"].Value = "ID";
+                worksheet.Cells["B3"].Value = "Name";
+                worksheet.Cells["C3"].Value = "Publiccation Date";
+                worksheet.Cells["D3"].Value = "Price";
+                worksheet.Cells["F3"].Value = "Author";
+                worksheet.Cells["G3"].Value = "Category";
+                worksheet.Cells["H3"].Value = "Publisher";
+
+
+
+                
+                int row=4;
+                foreach (var book in books)
+                {
+                    worksheet.Cells[row,1].Value=book.Id;
+                    worksheet.Cells[row,2].Value=book.Name;
+                    worksheet.Cells[row,3].Value=book.publiccationDate;
+                    worksheet.Cells[row,4].Value=book.Price;
+                    worksheet.Cells[row,5].Value=book.Author.Name;
+                    worksheet.Cells[row,6].Value=book.Category.Name;
+                    worksheet.Cells[row,7].Value=book.Publishers.Name;
+ 
+                    row++;
+                }
+                xlPackage.Save();
+            }
+            stream.Position = 0;
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "genres.xlsx");
+        
         }
     }
 }
