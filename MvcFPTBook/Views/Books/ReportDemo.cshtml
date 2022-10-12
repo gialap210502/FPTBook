@@ -1,0 +1,71 @@
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Total</th>
+    </tr>
+    @foreach (
+    var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Total</td>
+        </tr>
+    }
+</table>
+
+<div>
+    <canvas id="myChart1"></canvas>
+</div>
+<div>
+    <canvas id="myChart2"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div>
+    <script>
+        const labels = [@Html.Raw(ViewData["labels"])];
+
+
+        const data1 = {
+            labels: labels,
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: ['rgb(245, 13, 175)', 'rgb(24, 142, 7)', 'rgb(255, 99, 132)'],
+                borderColor: 'rgb(255, 99, 132)',
+                data: [@ViewData["totals"]],
+            }]
+        };
+
+        const data2 = {
+            labels: labels,
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: ['rgb(245, 13, 175)', 'rgb(24, 142, 7)', 'rgb(255, 99, 132)'],
+                borderColor: 'rgb(255, 99, 132)',
+                data: [@ViewData["totals"]],
+            }]
+        };
+
+        const config1 = {
+            type: 'bar',
+            data: data1,
+            options: {}
+        };
+        const config2 = {
+            type: 'bar',
+            data: data2,
+            options: {}
+        };
+
+        const myChart1 = new Chart(
+            document.getElementById('myChart1'),
+            config1
+        );
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+    </script>
+</div>
+<div>
+    <a asp-action="ExportMovieList">Export Movie List</a>
+</div>

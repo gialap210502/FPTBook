@@ -297,5 +297,28 @@ namespace MvcFPTBook.Controllers
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "genres.xlsx");
         
         }
+        public IActionResult ReportDemo()
+        {
+            
+        var data =_context.OrderDetail.Include(s=>s.Book)
+                        .GroupBy(s=>s.Book.Name)
+                        .Select(g => new { Name = g.Key,Total = g.Sum(s => s.Quantity) })
+                        .ToList();
+
+        string[] labels = new string[data.Count];
+        string[] totals = new string[data.Count];
+
+        for(int i = 0; i < data.Count; i++)
+        {
+            labels[i] = data[i].Name;
+            totals[i] = data[i].Total.ToString();
+
+        }
+
+        ViewData["labels"] = string.Format("'{0}'",String.Join("','",labels));
+        ViewData["totals"] = String.Join(",", totals);
+
+        return View(data);
+        }
     }
 }
