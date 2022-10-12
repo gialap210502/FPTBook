@@ -600,3 +600,7 @@ C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.I
 C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.System.Drawing.dll
 C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
 >>>>>>> 697301a4fbae34bdaf9d32958b95171ec1957e45
+C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.dll
+C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.Interfaces.dll
+C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
