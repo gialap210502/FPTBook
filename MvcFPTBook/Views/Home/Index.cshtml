@@ -48,7 +48,7 @@
         </button>
     </div>
 </div>
-<h2>Book List</h2>
+<h2>Book |</h2>
 <div class='row' style='margin: auto;'>
     @foreach (var item in Model)
     {
@@ -62,7 +62,7 @@
                     <h6>Category: </h6>@Html.DisplayFor(modelItem => item.Category.Name)</p>
                     <p class="card-text">
                     <h6>Author: </h6>@Html.DisplayFor(modelItem => item.Author.Name)</p>
-                    <a asp-action="Details" asp-route-id="@item.Id">Show details</a>
+                    <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.Id">Show details</a>
                 </div>
             </div>
             <br>
