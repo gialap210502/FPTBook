@@ -17,7 +17,7 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(10);
     options.Cookie.IsEssential = true;
 });
-
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
