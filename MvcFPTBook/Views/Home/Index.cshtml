@@ -62,7 +62,7 @@
                     <h6>Category: </h6>@Html.DisplayFor(modelItem => item.Category.Name)</p>
                     <p class="card-text">
                     <h6>Author: </h6>@Html.DisplayFor(modelItem => item.Author.Name)</p>
-                    <a href="#" class="card-link">Another link</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Show details</a>
                 </div>
             </div>
             <br>

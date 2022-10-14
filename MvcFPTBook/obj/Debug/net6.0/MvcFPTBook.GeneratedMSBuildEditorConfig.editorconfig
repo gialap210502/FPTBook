@@ -175,6 +175,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-87ns7t9q4t
+
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Shared/_Layout.cshtml]
+=======
 [C:/Users/Administrator/Desktop/1670/FPTBook/MvcFPTBook/Views/Shared/_Layout.cshtml]
+>>>>>>> 697301a4fbae34bdaf9d32958b95171ec1957e45
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7tlcx99g2s

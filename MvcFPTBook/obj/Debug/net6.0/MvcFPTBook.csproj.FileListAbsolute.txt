@@ -308,6 +308,9 @@ C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\obj\Debug\net6.0\refint\MvcFPTB
 C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\obj\Debug\net6.0\MvcFPTBook.pdb
 C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\obj\Debug\net6.0\MvcFPTBook.genruntimeconfig.cache
 C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\obj\Debug\net6.0\ref\MvcFPTBook.dll
+<<<<<<< HEAD
+C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\obj\Debug\net6.0\scopedcss\Views\Home\Details.cshtml.rz.scp.css
+=======
 C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\appsettings.json
 C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\MvcFPTBook.staticwebassets.runtime.json
@@ -596,3 +599,4 @@ C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.d
 C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.Interfaces.dll
 C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.System.Drawing.dll
 C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+>>>>>>> 697301a4fbae34bdaf9d32958b95171ec1957e45
