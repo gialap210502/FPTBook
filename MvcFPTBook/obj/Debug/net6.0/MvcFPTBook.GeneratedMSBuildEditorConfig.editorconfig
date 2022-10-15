@@ -8,177 +8,177 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MvcFPTBook
 build_property.RootNamespace = MvcFPTBook
-build_property.ProjectDir = c:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\
+build_property.ProjectDir = C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook
+build_property.MSBuildProjectDirectory = C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Authors/Create.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Authors/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Authors/Delete.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Authors/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Authors/Details.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Authors/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Authors/Edit.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Authors/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Authors/Index.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Authors/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/AddTicket.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/AddTicket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQWRkVGlja2V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/CheckOut.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/CheckOut.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQ2hlY2tPdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/Create.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/Delete.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/Details.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/Edit.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/Index.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/PlaceOrder.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/PlaceOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcUGxhY2VPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/ReportDemo.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Books/ReportDemo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcUmVwb3J0RGVtby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Categorys/Create.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Categorys/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Categorys/Delete.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Categorys/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Categorys/Details.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Categorys/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Categorys/Edit.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Categorys/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Categorys/Index.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Categorys/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Home/Index.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Home/Privacy.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/OrderDetails/Create.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/OrderDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/OrderDetails/Delete.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/OrderDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/OrderDetails/Details.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/OrderDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/OrderDetails/Edit.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/OrderDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/OrderDetails/Index.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/OrderDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Publishers/Create.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Publishers/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Publishers/Delete.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Publishers/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Publishers/Details.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Publishers/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Publishers/Edit.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Publishers/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Publishers/Index.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Publishers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaGVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Shared/Error.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Users/Create.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Users/Delete.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Users/Details.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Users/Edit.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Users/Index.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/_ViewImports.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/_ViewStart.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Home/Details.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-87ns7t9q4t
 
-[c:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Shared/_Layout.cshtml]
+[C:/Users/Lap/Documents/GitHub/FPTBook/MvcFPTBook/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7tlcx99g2s
