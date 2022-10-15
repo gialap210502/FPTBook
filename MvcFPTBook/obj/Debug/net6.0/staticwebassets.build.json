@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Pw5UX71FNtadAkIIEJvWrKx12qdWcI6e1s1bKKHSvRY=",
+  "Hash": "2BpXVoHXju1jIU7FLRumhhz3HuxNTrKXEWuCY0CZUD0=",
   "Source": "MvcFPTBook",
   "BasePath": "_content/MvcFPTBook",
   "Mode": "Default",
@@ -1154,23 +1154,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\119744551_1673325986176562_6120075127347018441_n.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\wwwroot\\uploads\\5.jpg",
-      "SourceId": "MvcFPTBook",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\wwwroot\\",
-      "BasePath": "_content/MvcFPTBook",
-      "RelativePath": "uploads/5.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\5.jpg"
     },
     {
       "Identity": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\wwwroot\\uploads\\IMG_6189.JPG",

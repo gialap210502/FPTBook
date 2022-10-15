@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <p>
-    <a class="btn btn-outline-success" asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -43,6 +43,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Poster)
                 <img src="~/Uploads/@item.Poster" width="100"/>
             </td>
             <td>
@@ -61,9 +62,9 @@
                 @Html.DisplayFor(modelItem => item.Publishers.Address)
             </td>
             <td>
-                <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a class="btn btn-outline-info" asp-route-id="@item.Id">Details</a> |
-                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
