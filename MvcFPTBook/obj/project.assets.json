@@ -10134,24 +10134,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lap\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\MSI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj",
+      "projectUniqueName": "D:\\1670\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj",
       "projectName": "MvcFPTBook",
-      "projectPath": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj",
-      "packagesPath": "C:\\Users\\Lap\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\obj\\",
+      "projectPath": "D:\\1670\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj",
+      "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
+      "outputPath": "D:\\1670\\FPTBook\\MvcFPTBook\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Lap\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10218,7 +10213,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
