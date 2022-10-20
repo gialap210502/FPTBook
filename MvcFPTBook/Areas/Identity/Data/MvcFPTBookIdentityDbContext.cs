@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MvcFPTBook.Areas.Identity.Data;
 
-public class MvcFPTBookIdentityDbContext : IdentityDbContext<IdentityUser>
+public class MvcFPTBookIdentityDbContext : IdentityDbContext<BookUser>
 {
     public MvcFPTBookIdentityDbContext(DbContextOptions<MvcFPTBookIdentityDbContext> options)
         : base(options)

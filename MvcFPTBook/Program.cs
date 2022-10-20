@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MvcFPTBookIdentityDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MvcFPTBookIdentityDbContextConnection") ?? throw new InvalidOperationException("Connection string 'MvcBookContext' not found.")));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<BookUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<MvcFPTBookIdentityDbContext>();
 
