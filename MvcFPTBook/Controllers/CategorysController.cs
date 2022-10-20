@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MvcFPTBook.Data;
+using MvcFPTBook.Areas.Identity.Data;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using MvcFPTBook.Models;
@@ -14,9 +14,9 @@ namespace MvcFPTBook.Controllers
 {
     public class CategorysController : Controller
     {
-        private readonly MvcBookContext _context;
+        private readonly MvcFPTBookIdentityDbContext _context;
 
-        public CategorysController(MvcBookContext context)
+        public CategorysController(MvcFPTBookIdentityDbContext context)
         {
             _context = context;
         }

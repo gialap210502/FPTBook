@@ -7,16 +7,16 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using MvcFPTBook.Data;
+using MvcFPTBook.Areas.Identity.Data;
 using MvcFPTBook.Models;
 
 namespace MvcFPTBook.Controllers
 {
     public class PublishersController : Controller
     {
-        private readonly MvcBookContext _context;
+        private readonly MvcFPTBookIdentityDbContext _context;
 
-        public PublishersController(MvcBookContext context)
+        public PublishersController(MvcFPTBookIdentityDbContext context)
         {
             _context = context;
         }

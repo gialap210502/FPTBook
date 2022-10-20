@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MvcFPTBook.Models;
-using MvcFPTBook.Data;
+using MvcFPTBook.Areas.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace MvcFPTBook.Controllers;
@@ -9,9 +9,9 @@ namespace MvcFPTBook.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly MvcBookContext _context;
+    private readonly MvcFPTBookIdentityDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger, MvcBookContext context)
+    public HomeController(ILogger<HomeController> logger, MvcFPTBookIdentityDbContext context)
     {
         _logger = logger;
         _context = context;

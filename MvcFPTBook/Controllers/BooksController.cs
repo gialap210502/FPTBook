@@ -9,17 +9,17 @@ using Microsoft.AspNetCore.Hosting;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using MvcFPTBook.Models;
-using MvcFPTBook.Data;
+using MvcFPTBook.Areas.Identity.Data;
 using MvcFPTBook.Utils;
 
 namespace MvcFPTBook.Controllers
 {
     public class BooksController : Controller
     {
-        private readonly MvcBookContext _context;
+        private readonly MvcFPTBookIdentityDbContext _context;
         private readonly IWebHostEnvironment hostEnvironment;
 
-        public BooksController(MvcBookContext context, IWebHostEnvironment environment)
+        public BooksController(MvcFPTBookIdentityDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
             hostEnvironment = environment;

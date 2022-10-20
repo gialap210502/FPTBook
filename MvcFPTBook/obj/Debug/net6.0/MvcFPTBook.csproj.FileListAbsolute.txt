@@ -604,3 +604,13 @@ C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.dll
 C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.Interfaces.dll
 C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\bin\Debug\net6.0\EPPlus.System.Drawing.dll
 C:\Users\Lap\Documents\GitHub\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\obj\Debug\net6.0\scopedcss\Views\Home\Details.cshtml.rz.scp.css
+C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Administrator\Desktop\1670\FPTBook\MvcFPTBook\obj\Debug\net6.0\MvcFPTBook.MvcApplicationPartsAssemblyInfo.cs

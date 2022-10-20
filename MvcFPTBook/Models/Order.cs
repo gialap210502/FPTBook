@@ -8,7 +8,7 @@ public class Order
     [DataType(DataType.Date)]
     public DateTime OrderTime { get; set; }
     public decimal Total { get; set; }
-    public User? User { get; set; }
+    // public User? User { get; set; }
     public ICollection<OrderDetail>? OrderDetail { get; set; }
 
 

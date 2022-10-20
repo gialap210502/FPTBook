@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MvcFPTBook.Data;
+using MvcFPTBook.Areas.Identity.Data;
 using MvcFPTBook.Models;
 
 namespace MvcFPTBook.Controllers
 {
     public class OrdersController : Controller
     {
-        private readonly MvcBookContext _context;
+        private readonly MvcFPTBookIdentityDbContext _context;
 
-        public OrdersController(MvcBookContext context)
+        public OrdersController(MvcFPTBookIdentityDbContext context)
         {
             _context = context;
         }
