@@ -11,6 +11,8 @@ using OfficeOpenXml.Style;
 using MvcFPTBook.Models;
 using MvcFPTBook.Areas.Identity.Data;
 using MvcFPTBook.Utils;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace MvcFPTBook.Controllers
 {
@@ -26,6 +28,8 @@ namespace MvcFPTBook.Controllers
         }
 
         // GET: Books
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Index()
         {
             var mvcBookContext = _context.Book.Include(b => b.Author).Include(b => b.Category).Include(b => b.Publishers);
@@ -33,6 +37,8 @@ namespace MvcFPTBook.Controllers
         }
 
         // GET: Books/Details/5
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Book == null)
@@ -54,6 +60,8 @@ namespace MvcFPTBook.Controllers
         }
 
         // GET: Books/Create
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public IActionResult Create()
         {
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name");
@@ -67,6 +75,8 @@ namespace MvcFPTBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Create([Bind("Id,Name,Poster,publiccationDate,Price,AuthorID,CategoryID,PublisherID")] Book book, IFormFile myfile)
         {
             if (!ModelState.IsValid)
@@ -91,6 +101,8 @@ namespace MvcFPTBook.Controllers
         }
 
         // GET: Books/Edit/5
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Book == null)
@@ -114,6 +126,8 @@ namespace MvcFPTBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Poster,publiccationDate,Price,AuthorID,CategoryID,PublisherID")] Book book)
         {
             if (id != book.Id)
@@ -148,6 +162,8 @@ namespace MvcFPTBook.Controllers
         }
 
         // GET: Books/Delete/5
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Book == null)
@@ -171,6 +187,8 @@ namespace MvcFPTBook.Controllers
         // POST: Books/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Book == null)
@@ -264,6 +282,8 @@ namespace MvcFPTBook.Controllers
             return RedirectToAction("CheckOut", "Books");
         }
 
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public IActionResult ExportBookList()
         {
             //get data from database using EF
@@ -304,6 +324,7 @@ namespace MvcFPTBook.Controllers
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "genres.xlsx");
 
         }
+
         public IActionResult ReportDemo()
         {
             

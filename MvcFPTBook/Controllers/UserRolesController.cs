@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MvcFPTBook.Areas.Identity.Data;
 using MvcFPTBook.Models;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace MvcFPTBook.Controllers{
 
@@ -16,6 +18,8 @@ public class UserRolesController : Controller
             _roleManager = roleManager;
             _userManager = userManager;
         }
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Index()
         {
             var users = await _userManager.Users.ToListAsync();
@@ -35,6 +39,8 @@ public class UserRolesController : Controller
         {
             return new List<string>(await _userManager.GetRolesAsync(user));
         }
+
+        [Authorize(Roles = "Admin, StoreOwner")]
 
         public async Task<IActionResult> Manage(string userId)
 {
@@ -67,6 +73,8 @@ public class UserRolesController : Controller
     return View(model);
 }
     [HttpPost]
+    [Authorize(Roles = "Admin, StoreOwner")]
+
     public async Task<IActionResult> Manage(List<ManageUserRolesViewModel> model, string userId)
     {
         var user = await _userManager.FindByIdAsync(userId);

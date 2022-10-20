@@ -9,6 +9,8 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using MvcFPTBook.Models;
 using MvcFPTBook.Areas.Identity.Data;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace MvcFPTBook.Controllers
 {
@@ -22,6 +24,8 @@ namespace MvcFPTBook.Controllers
         }
 
         // GET: Authors
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Index()
         {
               return _context.Author != null ? 
@@ -30,6 +34,8 @@ namespace MvcFPTBook.Controllers
         }
 
         // GET: Authors/Details/5
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Author == null)
@@ -47,6 +53,8 @@ namespace MvcFPTBook.Controllers
             return View(author);
         }
 
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         // GET: Authors/Create
         public IActionResult Create()
         {
@@ -56,6 +64,8 @@ namespace MvcFPTBook.Controllers
         // POST: Authors/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name")] Author author)
@@ -70,6 +80,8 @@ namespace MvcFPTBook.Controllers
         }
 
         // GET: Authors/Edit/5
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Author == null)
@@ -90,6 +102,8 @@ namespace MvcFPTBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Author author)
         {
             if (id != author.Id)
@@ -121,6 +135,8 @@ namespace MvcFPTBook.Controllers
         }
 
         // GET: Authors/Delete/5
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Author == null)
@@ -141,6 +157,8 @@ namespace MvcFPTBook.Controllers
         // POST: Authors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, StoreOwner")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Author == null)
@@ -161,6 +179,8 @@ namespace MvcFPTBook.Controllers
         {
           return (_context.Author?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+        [Authorize(Roles = "Admin, StoreOwner")]
 
         public IActionResult ExportAuthorList()
         {
