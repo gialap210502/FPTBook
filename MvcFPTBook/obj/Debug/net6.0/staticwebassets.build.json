@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aLeay2F99XJReOAI1eguVxpI/vA5Ky+k+Jl4QhH0fyw=",
+  "Hash": "C8uUyoovgH2V3yFlvdqKBjiYad/TV8OxWB7vi010Jzk=",
   "Source": "MvcFPTBook",
   "BasePath": "_content/MvcFPTBook",
   "Mode": "Default",
@@ -2225,6 +2225,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\IMG_6243.JPG"
+    },
+    {
+      "Identity": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\wwwroot\\uploads\\mg2c00001_0001.png",
+      "SourceId": "MvcFPTBook",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\wwwroot\\",
+      "BasePath": "_content/MvcFPTBook",
+      "RelativePath": "uploads/mg2c00001_0001.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\mg2c00001_0001.png"
+    },
+    {
+      "Identity": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\wwwroot\\uploads\\ocean-1920x1080-blue-water-4k-23244.jpg",
+      "SourceId": "MvcFPTBook",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\wwwroot\\",
+      "BasePath": "_content/MvcFPTBook",
+      "RelativePath": "uploads/ocean-1920x1080-blue-water-4k-23244.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\ocean-1920x1080-blue-water-4k-23244.jpg"
     }
   ]
 }

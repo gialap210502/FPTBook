@@ -11,7 +11,6 @@ using OfficeOpenXml.Style;
 using MvcFPTBook.Models;
 using Microsoft.AspNetCore.Authorization;
 
-
 namespace MvcFPTBook.Controllers
 {
     public class CategorysController : Controller
@@ -25,17 +24,15 @@ namespace MvcFPTBook.Controllers
 
         // GET: Categorys
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public async Task<IActionResult> Index()
         {
-              return _context.Category != null ? 
-                          View(await _context.Category.ToListAsync()) :
-                          Problem("Entity set 'MvcBookContext.Category'  is null.");
+            return _context.Category != null
+                ? View(await _context.Category.ToListAsync())
+                : Problem("Entity set 'MvcBookContext.Category'  is null.");
         }
 
         // GET: Categorys/Details/5
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Category == null)
@@ -43,8 +40,7 @@ namespace MvcFPTBook.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Category
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var category = await _context.Category.FirstOrDefaultAsync(m => m.Id == id);
             if (category == null)
             {
                 return NotFound();
@@ -55,7 +51,6 @@ namespace MvcFPTBook.Controllers
 
         // GET: Categorys/Create
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public IActionResult Create()
         {
             return View();
@@ -67,8 +62,7 @@ namespace MvcFPTBook.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, StoreOwner")]
-
-        public async Task<IActionResult> Create([Bind("Id,Name")] Category category)
+        public async Task<IActionResult> Create([Bind("Id,Name,Status")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +75,6 @@ namespace MvcFPTBook.Controllers
 
         // GET: Categorys/Edit/5
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Category == null)
@@ -103,8 +96,7 @@ namespace MvcFPTBook.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, StoreOwner")]
-
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Category category)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Status")] Category category)
         {
             if (id != category.Id)
             {
@@ -136,7 +128,6 @@ namespace MvcFPTBook.Controllers
 
         // GET: Categorys/Delete/5
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Category == null)
@@ -144,8 +135,7 @@ namespace MvcFPTBook.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Category
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var category = await _context.Category.FirstOrDefaultAsync(m => m.Id == id);
             if (category == null)
             {
                 return NotFound();
@@ -158,7 +148,6 @@ namespace MvcFPTBook.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Category == null)
@@ -170,42 +159,45 @@ namespace MvcFPTBook.Controllers
             {
                 _context.Category.Remove(category);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CategoryExists(int id)
         {
-          return (_context.Category?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Category?.Any(e => e.Id == id)).GetValueOrDefault();
         }
-        [Authorize(Roles = "Admin, StoreOwner")]
 
+        [Authorize(Roles = "Admin, StoreOwner")]
         public IActionResult ExportCategoryList()
         {
             //get data from database using EF
-            List<Category> categories= _context.Category.ToList<Category>();
+            List<Category> categories = _context.Category.ToList<Category>();
             var stream = new MemoryStream();
             using (var xlPackage = new ExcelPackage(stream))
             {
                 var worksheet = xlPackage.Workbook.Worksheets.Add("Categories");
-                
+
                 worksheet.Cells["A1"].Value = "Category List of FPT Book System";
                 worksheet.Cells["A3"].Value = "ID";
                 worksheet.Cells["B3"].Value = "Name";
-                
-                int row=4;
+
+                int row = 4;
                 foreach (var category in categories)
                 {
-                    worksheet.Cells[row,1].Value=category.Id;
-                    worksheet.Cells[row,2].Value=category.Name;
+                    worksheet.Cells[row, 1].Value = category.Id;
+                    worksheet.Cells[row, 2].Value = category.Name;
                     row++;
                 }
                 xlPackage.Save();
             }
             stream.Position = 0;
-            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "genres.xlsx");
-        
+            return File(
+                stream,
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "genres.xlsx"
+            );
         }
     }
 }

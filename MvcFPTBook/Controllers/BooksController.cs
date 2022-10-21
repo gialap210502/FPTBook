@@ -12,33 +12,43 @@ using MvcFPTBook.Models;
 using MvcFPTBook.Areas.Identity.Data;
 using MvcFPTBook.Utils;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Identity;
 
 namespace MvcFPTBook.Controllers
 {
     public class BooksController : Controller
     {
+        private readonly UserManager<BookUser> _userManager;
+
         private readonly MvcFPTBookIdentityDbContext _context;
         private readonly IWebHostEnvironment hostEnvironment;
 
-        public BooksController(MvcFPTBookIdentityDbContext context, IWebHostEnvironment environment)
+        public BooksController(
+            MvcFPTBookIdentityDbContext context,
+            IWebHostEnvironment environment,
+            UserManager<BookUser> userManager
+        )
         {
             _context = context;
+
+            _userManager = userManager;
+
             hostEnvironment = environment;
         }
 
         // GET: Books
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public async Task<IActionResult> Index()
         {
-            var mvcBookContext = _context.Book.Include(b => b.Author).Include(b => b.Category).Include(b => b.Publishers);
+            var mvcBookContext = _context.Book
+                .Include(b => b.Author)
+                .Include(b => b.Category)
+                .Include(b => b.Publishers);
             return View(await mvcBookContext.ToListAsync());
         }
 
         // GET: Books/Details/5
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Book == null)
@@ -61,7 +71,6 @@ namespace MvcFPTBook.Controllers
 
         // GET: Books/Create
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public IActionResult Create()
         {
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name");
@@ -76,8 +85,11 @@ namespace MvcFPTBook.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, StoreOwner")]
-
-        public async Task<IActionResult> Create([Bind("Id,Name,Poster,publiccationDate,Price,AuthorID,CategoryID,PublisherID")] Book book, IFormFile myfile)
+        public async Task<IActionResult> Create(
+            [Bind("Id,Name,Poster,publiccationDate,Price,AuthorID,CategoryID,PublisherID")]
+                Book book,
+            IFormFile myfile
+        )
         {
             if (!ModelState.IsValid)
             {
@@ -95,14 +107,23 @@ namespace MvcFPTBook.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name", book.AuthorID);
-            ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Name", book.CategoryID);
-            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Name", book.PublisherID);
+            ViewData["CategoryID"] = new SelectList(
+                _context.Category,
+                "Id",
+                "Name",
+                book.CategoryID
+            );
+            ViewData["PublisherID"] = new SelectList(
+                _context.Publisher,
+                "Id",
+                "Name",
+                book.PublisherID
+            );
             return View(book);
         }
 
         // GET: Books/Edit/5
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Book == null)
@@ -116,8 +137,18 @@ namespace MvcFPTBook.Controllers
                 return NotFound();
             }
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name", book.AuthorID);
-            ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Name", book.CategoryID);
-            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Name", book.PublisherID);
+            ViewData["CategoryID"] = new SelectList(
+                _context.Category,
+                "Id",
+                "Name",
+                book.CategoryID
+            );
+            ViewData["PublisherID"] = new SelectList(
+                _context.Publisher,
+                "Id",
+                "Name",
+                book.PublisherID
+            );
             return View(book);
         }
 
@@ -127,8 +158,11 @@ namespace MvcFPTBook.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, StoreOwner")]
-
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Poster,publiccationDate,Price,AuthorID,CategoryID,PublisherID")] Book book)
+        public async Task<IActionResult> Edit(
+            int id,
+            [Bind("Id,Name,Poster,publiccationDate,Price,AuthorID,CategoryID,PublisherID")]
+                Book book
+        )
         {
             if (id != book.Id)
             {
@@ -156,14 +190,23 @@ namespace MvcFPTBook.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name", book.AuthorID);
-            ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Name", book.CategoryID);
-            ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Name", book.PublisherID);
+            ViewData["CategoryID"] = new SelectList(
+                _context.Category,
+                "Id",
+                "Name",
+                book.CategoryID
+            );
+            ViewData["PublisherID"] = new SelectList(
+                _context.Publisher,
+                "Id",
+                "Name",
+                book.PublisherID
+            );
             return View(book);
         }
 
         // GET: Books/Delete/5
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Book == null)
@@ -188,7 +231,6 @@ namespace MvcFPTBook.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Book == null)
@@ -209,6 +251,7 @@ namespace MvcFPTBook.Controllers
         {
             return (_context.Book?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
         [HttpPost]
         public IActionResult AddTicket(int id, string name, decimal price, int quantity)
         {
@@ -226,6 +269,7 @@ namespace MvcFPTBook.Controllers
             ViewData["newItem"] = newItem;
             return View();
         }
+
         public IActionResult CheckOut()
         {
             ShoppingCart myCart;
@@ -238,21 +282,30 @@ namespace MvcFPTBook.Controllers
             ViewData["myItems"] = myCart.Items;
             return View();
         }
+
         public IActionResult PlaceOrder(decimal total)
         {
             ShoppingCart cart = (ShoppingCart)HttpContext.Session.GetObject<ShoppingCart>("cart");
             Order myOrder = new Order();
             myOrder.OrderTime = DateTime.Now;
             myOrder.Total = total;
+            var userid = _userManager.GetUserId(HttpContext.User);
+            BookUser user = _userManager.FindByIdAsync(userid).Result;
+            if (user == null)
+            {
+                return RedirectToAction("Account/Login", "Identity");
+            }
+            myOrder.BookUserId = user.Id;
+
             _context.Order.Add(myOrder);
-            _context.SaveChanges();//this generates the Id for Order
+            _context.SaveChanges(); //this generates the Id for Order
 
             foreach (var item in cart.Items)
             {
                 OrderDetail myOrderItem = new OrderDetail();
                 myOrderItem.BookId = item.ID;
                 myOrderItem.Quantity = item.Quantity;
-                myOrderItem.OrderId = myOrder.Id;//id of saved order above
+                myOrderItem.OrderId = myOrder.Id; //id of saved order above
 
                 _context.OrderDetail.Add(myOrderItem);
             }
@@ -263,6 +316,7 @@ namespace MvcFPTBook.Controllers
             HttpContext.Session.SetObject("cart", cart);
             return View();
         }
+
         [HttpPost]
         public RedirectToActionResult EditOrder(int id, int quantity)
         {
@@ -272,6 +326,7 @@ namespace MvcFPTBook.Controllers
 
             return RedirectToAction("CheckOut", "Books");
         }
+
         [HttpPost]
         public RedirectToActionResult RemoveOrderItem(int id)
         {
@@ -283,7 +338,6 @@ namespace MvcFPTBook.Controllers
         }
 
         [Authorize(Roles = "Admin, StoreOwner")]
-
         public IActionResult ExportBookList()
         {
             //get data from database using EF
@@ -302,9 +356,6 @@ namespace MvcFPTBook.Controllers
                 worksheet.Cells["G3"].Value = "Category";
                 worksheet.Cells["H3"].Value = "Publisher";
 
-
-
-
                 int row = 4;
                 foreach (var book in books)
                 {
@@ -321,32 +372,34 @@ namespace MvcFPTBook.Controllers
                 xlPackage.Save();
             }
             stream.Position = 0;
-            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "genres.xlsx");
-
+            return File(
+                stream,
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "genres.xlsx"
+            );
         }
 
         public IActionResult ReportDemo()
         {
-            
-        var data =_context.OrderDetail.Include(s=>s.Book)
-                        .GroupBy(s=>s.Book.Name)
-                        .Select(g => new { Name = g.Key,Total = g.Sum(s => s.Quantity) })
-                        .ToList();
+            var data = _context.OrderDetail
+                .Include(s => s.Book)
+                .GroupBy(s => s.Book.Name)
+                .Select(g => new { Name = g.Key, Total = g.Sum(s => s.Quantity) })
+                .ToList();
 
-        string[] labels = new string[data.Count];
-        string[] totals = new string[data.Count];
+            string[] labels = new string[data.Count];
+            string[] totals = new string[data.Count];
 
-        for(int i = 0; i < data.Count; i++)
-        {
-            labels[i] = data[i].Name;
-            totals[i] = data[i].Total.ToString();
+            for (int i = 0; i < data.Count; i++)
+            {
+                labels[i] = data[i].Name;
+                totals[i] = data[i].Total.ToString();
+            }
 
-        }
+            ViewData["labels"] = string.Format("'{0}'", String.Join("','", labels));
+            ViewData["totals"] = String.Join(",", totals);
 
-        ViewData["labels"] = string.Format("'{0}'",String.Join("','",labels));
-        ViewData["totals"] = String.Join(",", totals);
-
-        return View(data);
+            return View(data);
         }
     }
 }

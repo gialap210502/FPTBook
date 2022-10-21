@@ -1,46 +1,46 @@
 @using MvcFPTBook.Utils
 @{
-List<CartItem> myItems=(List<CartItem>)ViewData["myItems"];
-    decimal total=0;
+    List<CartItem> myItems = (List<CartItem>)ViewData["myItems"];
+    decimal total = 0;
 }
 <table class="table table-striped">
-<tr><th>Title</th>
-    <th>Price</th>
-    <th>Quantity</th>
-    <th>Total</th>
-    <th></th>
-    <th></th>
-</tr>
-@foreach (var item in myItems)
-{
-    total+=item.Price*item.Quantity;
     <tr>
-        <form asp-action="EditOrder" method="post">
-        <td>@item.Title</td>
-        <td>@item.Price</td>
-        <td><input type="number" min="0" name="quantity" value="@item.Quantity"/></td>
-        <td>@(item.Price*item.Quantity)</td>
-        <td>        
-            <input type="hidden" name="id" value="@item.ID"/>        
-            <input type="submit" value="Update" class="btn btn-primary"/>    
-        </td>
-        </form>
-        <td>
-            <form asp-action="RemoveOrderItem" method="post">
-          
-            <input type="hidden" name="id" value="@item.ID"/>        
-            <input type="submit" value="Remove" class="btn btn-danger"/>    
-            </form>
-        </td>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th></th>
+        <th></th>
     </tr>
-}
-<tr>
-        <td colspan="3">Total:</td>        
+    @foreach (var item in myItems)
+    {
+        total += item.Price * item.Quantity;
+        <tr>
+            <form asp-action="EditOrder" method="post">
+                <td>@item.Title</td>
+                <td>@item.Price</td>
+                <td><input type="number" min="0" name="quantity" value="@item.Quantity" /></td>
+                <td>@(item.Price*item.Quantity)</td>
+                <td>
+                    <input type="hidden" name="id" value="@item.ID" />
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </td>
+            </form>
+            <td>
+                <form asp-action="RemoveOrderItem" method="post">
+
+                    <input type="hidden" name="id" value="@item.ID" />
+                    <input type="submit" value="Remove" class="btn btn-danger" />
+                </form>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="3">Total:</td>
         <td>@total</td>
     </tr>
 </table>
 <form asp-action="PlaceOrder" method="post">
-        <input type="hidden" name="total" value="@total"/>        
-        <input type="submit" value="Order" class="btn btn-primary"/>    
+    <input type="hidden" name="total" value="@total" />
+    <input type="submit" value="Order" class="btn btn-primary" />
 </form>
-                

@@ -324,6 +324,9 @@ namespace MvcFPTBook.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("BookUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("OrderTime")
                         .HasColumnType("datetime2");
 
@@ -334,6 +337,8 @@ namespace MvcFPTBook.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BookUserId");
 
                     b.ToTable("Order");
                 });
@@ -470,6 +475,15 @@ namespace MvcFPTBook.Migrations
                     b.Navigation("Publishers");
                 });
 
+            modelBuilder.Entity("MvcFPTBook.Models.Order", b =>
+                {
+                    b.HasOne("MvcFPTBook.Areas.Identity.Data.BookUser", "BookUser")
+                        .WithMany("Order")
+                        .HasForeignKey("BookUserId");
+
+                    b.Navigation("BookUser");
+                });
+
             modelBuilder.Entity("MvcFPTBook.Models.OrderDetail", b =>
                 {
                     b.HasOne("MvcFPTBook.Models.Book", "Book")
@@ -486,6 +500,11 @@ namespace MvcFPTBook.Migrations
 
                     b.Navigation("Book");
 
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("MvcFPTBook.Areas.Identity.Data.BookUser", b =>
+                {
                     b.Navigation("Order");
                 });
 

@@ -79,21 +79,6 @@ namespace MvcFPTBook.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Order",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    State = table.Column<int>(type: "int", nullable: false),
-                    OrderTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Order", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Publisher",
                 columns: table => new
                 {
@@ -215,6 +200,27 @@ namespace MvcFPTBook.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Order",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    State = table.Column<int>(type: "int", nullable: false),
+                    OrderTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    BookUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Order", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Order_AspNetUsers_BookUserId",
+                        column: x => x.BookUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Book",
                 columns: table => new
                 {
@@ -333,6 +339,11 @@ namespace MvcFPTBook.Migrations
                 column: "PublisherID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Order_BookUserId",
+                table: "Order",
+                column: "BookUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_OrderDetail_BookId",
                 table: "OrderDetail",
                 column: "BookId");
@@ -367,9 +378,6 @@ namespace MvcFPTBook.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
                 name: "Book");
 
             migrationBuilder.DropTable(
@@ -383,6 +391,9 @@ namespace MvcFPTBook.Migrations
 
             migrationBuilder.DropTable(
                 name: "Publisher");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
         }
     }
 }
