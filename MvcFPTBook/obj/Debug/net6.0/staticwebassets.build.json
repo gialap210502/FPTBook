@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "C8uUyoovgH2V3yFlvdqKBjiYad/TV8OxWB7vi010Jzk=",
+  "Hash": "VaBy1eCTMgXeNXVFeM5hjZQSBi7Rr3XNgQDcTyGIXHg=",
   "Source": "MvcFPTBook",
   "BasePath": "_content/MvcFPTBook",
   "Mode": "Default",
@@ -2157,6 +2157,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Panel\\3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\wwwroot\\Panel\\genres.xlsx",
+      "SourceId": "MvcFPTBook",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\wwwroot\\",
+      "BasePath": "_content/MvcFPTBook",
+      "RelativePath": "Panel/genres.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Panel\\genres.xlsx"
     },
     {
       "Identity": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\wwwroot\\uploads\\119744551_1673325986176562_6120075127347018441_n.jpg",

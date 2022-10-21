@@ -5,13 +5,19 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="p-3 mb-2 bg-info text-dark">Category List</h1>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+    <p>
+        <a asp-action="Create" type="button" class="btn btn-primary">Create New</a>
+    <p>
+        <a asp-action="ExportCategoryList" type="button" class="btn btn-outline-success "><i
+                class="fa-solid fa-file-excel"></i></a>
+    </p>
+    </p>
+</div>
+<table class="table table-striped ">
+    <thead class="table-info">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -45,9 +51,12 @@
                     @Html.DisplayFor(modelItem => item.Status)
                     </td> *@
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-warning"><i
+                        class="fa-solid fa-pen-to-square"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" type="button" class="btn btn-secondary"><i
+                        class="fa-solid fa-circle-info"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-danger"><i
+                        class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         }
