@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using MvcFPTBook.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<MvcFPTBookIdentityDbContextConnection>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcFPTBookIdentityDbContextConnection") ?? throw new InvalidOperationException("Connection string 'MvcFPTBookIdentityDbContextConnection' not found.")));
 builder.Services.AddDbContext<MvcFPTBookIdentityDbContext>(
     options =>
         options.UseSqlServer(
