@@ -3,7 +3,7 @@
     ViewData["Title"] = "Role Manager";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<h1>Role Manager</h1>
+<h1 class="p-3 mb-2 bg-info text-dark">Role Manager</h1>
 <form method="post" asp-action="AddRole" asp-controller="RoleManager">
     <div class="input-group">
         <input name="roleName" class="form-control w-25">
@@ -13,7 +13,7 @@
     </div>
 </form>
 <table class="table table-striped">
-    <thead>
+    <thead class="table-info">
         <tr>
             <th>Id</th>
             <th>Role</th>

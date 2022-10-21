@@ -14,12 +14,20 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MvcFPTBook.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/278b5e7493.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+<<<<<<< HEAD
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">FPT Books</a>
+=======
+    <header class="navbar navbar-dark bg-primary sticky-top flex-md-nowrap p-0 shadow"
+        style="background-color: #e3f2fd;">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" asp-action="Index">FPT Books</a>
+>>>>>>> c6b81c7b52065d8c1a9989c6fad72dfc2f64ce9a
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -34,7 +42,8 @@
     </header>
     <div class=" container-fluid ">
         <div class="row">
-            <nav id="sidebarMenu" class=" col-md-3 col-lg-2 d-md-block bg-light sidebar collapse bg-dark">
+            <nav id="sidebarMenu" class=" col-md-3 col-lg-2 d-md-block navbar-light sidebar collapse"
+                style="background-color: #e3f2fd;">
                 <div class="position-sticky pt-3 sidebar-sticky">
                     <ul class="nav flex-column">
                         <partial name="_LoginPartial" />
@@ -77,32 +86,28 @@
                 </div>
             </nav>
 
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
                 <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom p-3 mb-2 bg-info text-dark">
                     <h1 class="h2">Dashboard</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
                             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
                             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
+
                     </div>
                 </div>
 
                 <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-                <h2>Section title</h2>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
 
                     </table>
                 </div>
 
-                <div class="container">
+                <div class="container table-primary">
                     <main role="main" class="pb-3">
                         @RenderBody()
                     </main>
