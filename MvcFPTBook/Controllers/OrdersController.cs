@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcFPTBook.Areas.Identity.Data;
 using MvcFPTBook.Models;
+using MvcFPTBook.Controllers;
+using MvcFPTBook.Areas.Identity;
+using Microsoft.AspNetCore.Identity;
 
 namespace MvcFPTBook.Controllers
 {
@@ -22,8 +25,9 @@ namespace MvcFPTBook.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            var mvcFPTBookIdentityDbContext = _context.Order.Include(o => o.BookUser);
-            return View(await mvcFPTBookIdentityDbContext.ToListAsync());
+            return _context.Order != null
+                ? View(await _context.Order.ToListAsync())
+                : Problem("Entity set 'MvcBookContext.Order'  is null.");
         }
 
         // GET: Orders/Details/5
@@ -34,9 +38,7 @@ namespace MvcFPTBook.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Order
-                .Include(o => o.BookUser)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var order = await _context.Order.FirstOrDefaultAsync(m => m.Id == id);
             if (order == null)
             {
                 return NotFound();
@@ -48,7 +50,6 @@ namespace MvcFPTBook.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["BookUserId"] = new SelectList(_context.BookUser, "Id", "Id");
             return View();
         }
 
@@ -57,7 +58,9 @@ namespace MvcFPTBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,State,OrderTime,Total,BookUserId")] Order order)
+        public async Task<IActionResult> Create(
+            [Bind("Id,Status,Created_at,Updated_at")] Order order
+        )
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +68,6 @@ namespace MvcFPTBook.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BookUserId"] = new SelectList(_context.BookUser, "Id", "Id", order.BookUserId);
             return View(order);
         }
 
@@ -82,7 +84,6 @@ namespace MvcFPTBook.Controllers
             {
                 return NotFound();
             }
-            ViewData["BookUserId"] = new SelectList(_context.BookUser, "Id", "Id", order.BookUserId);
             return View(order);
         }
 
@@ -91,7 +92,10 @@ namespace MvcFPTBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,State,OrderTime,Total,BookUserId")] Order order)
+        public async Task<IActionResult> Edit(
+            int id,
+            [Bind("Id,Status,Created_at,Updated_at")] Order order
+        )
         {
             if (id != order.Id)
             {
@@ -118,7 +122,6 @@ namespace MvcFPTBook.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BookUserId"] = new SelectList(_context.BookUser, "Id", "Id", order.BookUserId);
             return View(order);
         }
 
@@ -130,9 +133,7 @@ namespace MvcFPTBook.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Order
-                .Include(o => o.BookUser)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var order = await _context.Order.FirstOrDefaultAsync(m => m.Id == id);
             if (order == null)
             {
                 return NotFound();
@@ -148,21 +149,21 @@ namespace MvcFPTBook.Controllers
         {
             if (_context.Order == null)
             {
-                return Problem("Entity set 'MvcFPTBookIdentityDbContext.Order'  is null.");
+                return Problem("Entity set 'MvcBookContext.Order'  is null.");
             }
             var order = await _context.Order.FindAsync(id);
             if (order != null)
             {
                 _context.Order.Remove(order);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool OrderExists(int id)
         {
-          return _context.Order.Any(e => e.Id == id);
+            return (_context.Order?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
