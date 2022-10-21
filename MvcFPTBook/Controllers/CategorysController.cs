@@ -10,11 +10,14 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using MvcFPTBook.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace MvcFPTBook.Controllers
 {
     public class CategorysController : Controller
     {
+        private readonly UserManager<BookUser> _userManager;
+
         private readonly MvcFPTBookIdentityDbContext _context;
 
         public CategorysController(MvcFPTBookIdentityDbContext context)

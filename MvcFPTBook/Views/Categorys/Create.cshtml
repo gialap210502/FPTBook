@@ -19,11 +19,24 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
+            @if (ViewContext.HttpContext.User.IsInRole("StoreOwner"))
+            {
+                <select class="form-select" aria-label="Default select example" asp-for="Status"
+                asp-validation-for="Status">
+                    <option selected>Open this select menu</option>
+                    <option value="Process">Process</option>
+                </select>
+            }
+            else
+            {
+                <select class="form-select" aria-label="Default select example" asp-for="Status"
+                asp-validation-for="Status">
+                    <option selected>Open this select menu</option>
+                    <option value="Accept">Accept</option>
+                    <option value="Reject">Reject</option>
+                </select>
+            }
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

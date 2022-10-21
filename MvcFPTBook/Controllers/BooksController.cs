@@ -73,8 +73,10 @@ namespace MvcFPTBook.Controllers
         [Authorize(Roles = "Admin, StoreOwner")]
         public IActionResult Create()
         {
+            var data = _context.Category.Where(m => m.Status == "Accept");
+
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name");
-            ViewData["CategoryID"] = new SelectList(_context.Category, "Id", "Name");
+            ViewData["CategoryID"] = new SelectList(data, "Id", "Name");
             ViewData["PublisherID"] = new SelectList(_context.Publisher, "Id", "Name");
             return View();
         }
@@ -136,13 +138,10 @@ namespace MvcFPTBook.Controllers
             {
                 return NotFound();
             }
+            var data = _context.Category.Where(m => m.Status == "Accept");
+
             ViewData["AuthorID"] = new SelectList(_context.Author, "Id", "Name", book.AuthorID);
-            ViewData["CategoryID"] = new SelectList(
-                _context.Category,
-                "Id",
-                "Name",
-                book.CategoryID
-            );
+            ViewData["CategoryID"] = new SelectList(data, "Id", "Name", book.CategoryID);
             ViewData["PublisherID"] = new SelectList(
                 _context.Publisher,
                 "Id",

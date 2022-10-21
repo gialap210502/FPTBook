@@ -20,6 +20,19 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+            @if (ViewContext.HttpContext.User.IsInRole("StoreOwner"))
+            {
+                <h1>You cannot update category</h1>
+            }
+            else
+            {
+                <select class="form-select" aria-label="Default select example" asp-for="Status"
+                asp-validation-for="Status">
+                    <option selected>Open this select menu</option>
+                    <option value="Accept">Accept</option>
+                    <option value="Reject">Reject</option>
+                </select>
+            }
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

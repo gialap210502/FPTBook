@@ -29,9 +29,21 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
-                <td>
+                @if (item.Status == "Process")
+                {
+                    <td><span class="badge bg-warning">In Process</span></td>
+                }
+                else if (item.Status == "Accept")
+                {
+                    <td><span class="badge bg-success">Accept</span></td>
+                }
+                else
+                {
+                    <td><span class="badge bg-danger">Reject</span></td>
+                }
+                @* <td>
                     @Html.DisplayFor(modelItem => item.Status)
-                </td>
+                    </td> *@
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
