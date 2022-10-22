@@ -2,6 +2,7 @@
   "Version": 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "Hash": "3xZMxmJ2qUlhYo/KkTdok+9rMnaYWBVc+gSeMr+VUnM=",
 =======
   "Hash": "dVGQNmfc/jLZt5jgLYuVh6vWeG9mGjPo/ftlJ3CnREg=",
@@ -9,6 +10,9 @@
 =======
   "Hash": "C8uUyoovgH2V3yFlvdqKBjiYad/TV8OxWB7vi010Jzk=",
 >>>>>>> parent of 8ba65af (Create crud of order and more)
+=======
+  "Hash": "VaBy1eCTMgXeNXVFeM5hjZQSBi7Rr3XNgQDcTyGIXHg=",
+>>>>>>> parent of c6b81c7 (layout)
   "Source": "MvcFPTBook",
   "BasePath": "_content/MvcFPTBook",
   "Mode": "Default",
@@ -2169,6 +2173,7 @@
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\wwwroot\\uploads\\119744551_1673325986176562_6120075127347018441_n.jpg",
 =======
       "Identity": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\wwwroot\\Panel\\genres (1).xlsx",
@@ -2188,6 +2193,8 @@
       "OriginalItemSpec": "wwwroot\\Panel\\genres (1).xlsx"
     },
     {
+=======
+>>>>>>> parent of c6b81c7 (layout)
       "Identity": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\wwwroot\\Panel\\genres.xlsx",
       "SourceId": "MvcFPTBook",
       "SourceType": "Discovered",
