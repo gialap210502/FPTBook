@@ -1,0 +1,32 @@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page";
+}
+<p>
+  <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">How do I order?</a>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">How often do I receive the item?</button>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Will I be able to return the item and get a refund when the item is defective?</button>
+</p>
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        To Order, you need to enter the product details. Then, go to the cart section and proceed to click the Order button.
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <div class="card card-body">
+        Your ordered products will be shipped to you for 3-5 days depending on the shipping situation.
+      </div>
+    </div>
+  </div>
+    <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample3">
+      <div class="card card-body">
+        You return the goods and refund when there is enough evidence and proof that the goods are defective.
+      </div>
+    </div>
+  </div>
+</div>
