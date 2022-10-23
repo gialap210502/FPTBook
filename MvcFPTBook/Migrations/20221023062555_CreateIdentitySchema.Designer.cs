@@ -12,7 +12,7 @@ using MvcFPTBook.Areas.Identity.Data;
 namespace MvcFPTBook.Migrations
 {
     [DbContext(typeof(MvcFPTBookIdentityDbContext))]
-    [Migration("20221021044550_CreateIdentitySchema")]
+    [Migration("20221023062555_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -169,6 +169,9 @@ namespace MvcFPTBook.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -201,9 +204,6 @@ namespace MvcFPTBook.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")

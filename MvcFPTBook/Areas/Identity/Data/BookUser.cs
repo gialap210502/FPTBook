@@ -11,13 +11,13 @@ namespace MvcFPTBook.Areas.Identity.Data;
 public class BookUser : IdentityUser
 {
     [PersonalData]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     [PersonalData]
     public DateTime DOB { get; set; }
 
     [PersonalData]
-    public string Phone { get; set; }
+    public string? Address { get; set; }
 
     public ICollection<Order> Order { get; set; }
 }
