@@ -16,6 +16,12 @@
         <a asp-action="ExportBookList" type="button" class="btn btn-outline-success "><i
                 class="fa-solid fa-file-excel"></i></a>
     </p>
+    <form asp-controller="Books" asp-action="Search" method="get">
+    <p>
+        Name: <input type="text" name="searchString" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
 </div>
 <table class="table table-striped">
     <thead class="table-info">
