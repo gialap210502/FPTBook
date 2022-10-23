@@ -22,6 +22,30 @@ public class HomeController : Controller
         var mvcBookContext = _context.Book.Include(b => b.Author).Include(b => b.Category).Include(b => b.Publishers);
         return View(await mvcBookContext.ToListAsync());
     }
+        public async Task<IActionResult> QA()
+    {
+        var mvcBookContext = _context.Book.Include(b => b.Author).Include(b => b.Category).Include(b => b.Publishers);
+        return View(await mvcBookContext.ToListAsync());
+    }
+
+    public async Task<IActionResult> Product(string searchString)
+    {
+        var books = from m in _context.Book
+                        select m;
+            
+            var bookss = _context.Book
+                .Include(b => b.Author)
+                .Include(b => b.Category)
+                .Include(b => b.Publishers);
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                books = books.Where(s => s.Name!.Contains(searchString));
+            }
+
+            return View(await bookss.ToListAsync());
+    }
+
     
 
     public IActionResult Privacy()
