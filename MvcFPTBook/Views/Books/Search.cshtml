@@ -1,29 +1,15 @@
 @model IEnumerable<MvcFPTBook.Models.Book>
-
 @{
     Layout = "_AdminLayout";
-
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Home Page";
 }
-
-<h1 class="p-3 mb-2 bg-info text-dark">Book List</h1>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-
-    <p>
-        <a asp-action="Create" type="button" class="btn btn-primary">Create New</a>
-    </p>
-    <p>
-        <a asp-action="ExportBookList" type="button" class="btn btn-outline-success "><i
-                class="fa-solid fa-file-excel"></i></a>
-    </p>
-    <form asp-controller="Books" asp-action="Search" method="get">
+<h2>All Books</h2>
+<form asp-controller="Books" asp-action="Search" method="get">
     <p>
         Name: <input type="text" name="searchString" />
         <input type="submit" value="Search" />
     </p>
 </form>
-<a asp-controller="Books" asp-action="ReportDemo" method="get" type="button" class="btn btn-primary">Chart</a>
-</div>
 <table class="table table-striped">
     <thead class="table-info">
         <tr>

@@ -31,6 +31,9 @@ public class HomeController : Controller
     public async Task<IActionResult> Product(string searchString)
     {
         var books = from m in _context.Book
+                        .Include(b => b.Author)
+                        .Include(b => b.Category)
+                        .Include(b => b.Publishers)
                         select m;
             
             var bookss = _context.Book
@@ -43,7 +46,7 @@ public class HomeController : Controller
                 books = books.Where(s => s.Name!.Contains(searchString));
             }
 
-            return View(await bookss.ToListAsync());
+            return View(await books.ToListAsync());
     }
 
     

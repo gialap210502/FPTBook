@@ -50,6 +50,9 @@ namespace MvcFPTBook.Controllers
         public async Task<IActionResult> Search(string searchString)
         {
             var books = from m in _context.Book
+                    .Include(b => b.Author)
+                        .Include(b => b.Category)
+                        .Include(b => b.Publishers)
                         select m;
             /*
             display
