@@ -287,12 +287,3 @@ D:\1670\FPTBook\MvcFPTBook\obj\Release\net6.0\refint\MvcFPTBook.dll
 D:\1670\FPTBook\MvcFPTBook\obj\Release\net6.0\MvcFPTBook.pdb
 D:\1670\FPTBook\MvcFPTBook\obj\Release\net6.0\MvcFPTBook.genruntimeconfig.cache
 D:\1670\FPTBook\MvcFPTBook\obj\Release\net6.0\ref\MvcFPTBook.dll
-D:\1670\FPTBook\MvcFPTBook\bin\Release\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-D:\1670\FPTBook\MvcFPTBook\bin\Release\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-D:\1670\FPTBook\MvcFPTBook\bin\Release\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\1670\FPTBook\MvcFPTBook\bin\Release\net6.0\Microsoft.AspNetCore.Identity.UI.dll
-D:\1670\FPTBook\MvcFPTBook\bin\Release\net6.0\Microsoft.Extensions.DependencyInjection.dll
-D:\1670\FPTBook\MvcFPTBook\bin\Release\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
-D:\1670\FPTBook\MvcFPTBook\bin\Release\net6.0\Microsoft.Extensions.Identity.Core.dll
-D:\1670\FPTBook\MvcFPTBook\bin\Release\net6.0\Microsoft.Extensions.Identity.Stores.dll
-D:\1670\FPTBook\MvcFPTBook\obj\Release\net6.0\MvcFPTBook.MvcApplicationPartsAssemblyInfo.cs
