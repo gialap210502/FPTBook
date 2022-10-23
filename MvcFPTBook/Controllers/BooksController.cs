@@ -52,6 +52,7 @@ namespace MvcFPTBook.Controllers
             var books = from m in _context.Book
                         select m;
             /*
+            display
             var bookss = _context.Book
                 .Include(b => b.Author)
                 .Include(b => b.Category)
