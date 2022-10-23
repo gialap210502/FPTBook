@@ -49,4 +49,10 @@ info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
       Entity Framework Core 6.0.10 initialized 'MvcFPTBookIdentityDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: None
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT [b].[Id], [b].[AuthorID], [b].[CategoryID], [b].[Name], [b].[Poster], [b].[Pri
+      SELECT [b].[Id], [b].[AuthorID], [b].[CategoryID], [b].[Name], [b].[Poster], [b].[Price], [b].[PublisherID], [b].[publiccationDate], [a].[Id], [a].[Name], [c].[Id], [c].[Name], [c].[Status], [p].[Id], [p].[Address], [p].[Name], [p].[Phone]
+      FROM [Book] AS [b]
+      INNER JOIN [Author] AS [a] ON [b].[AuthorID] = [a].[Id]
+      INNER JOIN [Category] AS [c] ON [b].[CategoryID] = [c].[Id]
+      INNER JOIN [Publisher] AS [p] ON [b].[PublisherID] = [p].[Id]
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

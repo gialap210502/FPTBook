@@ -47,6 +47,24 @@ namespace MvcFPTBook.Controllers
             return View(await mvcBookContext.ToListAsync());
         }
 
+        public async Task<IActionResult> Search(string searchString)
+        {
+            var books = from m in _context.Book
+                        select m;
+            /*
+            var bookss = _context.Book
+                .Include(b => b.Author)
+                .Include(b => b.Category)
+                .Include(b => b.Publishers);*/
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                books = books.Where(s => s.Name!.Contains(searchString));
+            }
+
+            return View(await books.ToListAsync());
+        }
+
         // GET: Books/Details/5
         [Authorize(Roles = "Admin, StoreOwner")]
         public async Task<IActionResult> Details(int? id)
@@ -397,8 +415,7 @@ namespace MvcFPTBook.Controllers
 
             ViewData["labels"] = string.Format("'{0}'", String.Join("','", labels));
             ViewData["totals"] = String.Join(",", totals);
-
-            return View(data);
+            return View();
         }
     }
 }
