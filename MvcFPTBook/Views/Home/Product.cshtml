@@ -1,0 +1,34 @@
+@model IEnumerable<MvcFPTBook.Models.Book>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page";
+}
+<h2>All Books</h2>
+<form asp-controller="Books" asp-action="Product" method="get">
+    <p>
+        Name: <input type="text" name="searchString" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+<div class='row p-3 mb-2 bg-light text-dark' style='margin: auto;'>
+    @foreach (var item in Model)
+    {
+        <div class='col-md-3'>
+            <div class="card" style="width:250px">
+                <div class="card-body">
+                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h4>
+                    <a><img class="card-img-top" src="~/Uploads/@item.Poster" alt="Card image"
+                        style="height: 200px; width: 210px"></a>
+                    <p class="card-text">
+                    <h6>Category: </h6>@Html.DisplayFor(modelItem => item.Category.Name)</p>
+                    <p class="card-text">
+                    <h6>Author: </h6>@Html.DisplayFor(modelItem => item.Author.Name)</p>
+
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info" type="button">Show details</a>
+                </div>
+            </div>
+            <br>
+        </div>
+    }
+
+</div>
