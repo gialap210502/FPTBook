@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Nz/wRzmMaKRdQbZMGy8uv405XCFTGKfQjr34txzqgwA=",
+  "Hash": "6cREnfTF3OxbV3OA5XZIUyu5lux+19pZqJjUomkoJ0k=",
   "Source": "MvcFPTBook",
   "BasePath": "_content/MvcFPTBook",
   "Mode": "Default",
@@ -2310,6 +2310,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\ocean-1920x1080-blue-water-4k-23244.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\wwwroot\\uploads\\pp2.jpg",
+      "SourceId": "MvcFPTBook",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\wwwroot\\",
+      "BasePath": "_content/MvcFPTBook",
+      "RelativePath": "uploads/pp2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\pp2.jpg"
     },
     {
       "Identity": "C:\\Users\\Lap\\Documents\\GitHub\\FPTBook\\MvcFPTBook\\wwwroot\\uploads\\Sirius-RC.jpg",
