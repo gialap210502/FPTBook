@@ -1,7 +1,11 @@
-﻿@using MvcFPTBook.Utils
+﻿@using Microsoft.AspNetCore.Identity
+@using MvcFPTBook.Utils
 @using Newtonsoft.Json;
 @using Microsoft.AspNetCore.Http
+@using MvcFPTBook.Areas.Identity.Data;
 @using Newtonsoft.Json
+@inject SignInManager<BookUser> SignInManager
+@inject UserManager<BookUser> UserManager
 @inject IHttpContextAccessor HttpContextAccessor
 
 @{
@@ -31,7 +35,8 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 "
             style="background-color: #e3f2fd;">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/Logo.png" style="width:70px; height: 50px"></a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img
+                        src="~/images/Logo.png" style="width:70px; height: 50px"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -45,20 +50,74 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home"
                                 asp-action="Privacy">About</a>
                         </li>
-                                                <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Product">All Products</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Product">All
+                                Products</a>
                         </li>
-                                                </li>
-                                                <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="QA">Q&A</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="QA">Q&A</a>
                         </li>
 
                     </ul>
-                    <partial name="_LoginPartial" />
+                    <div class ="header_login">
+                 @* <a href="Book/Checkout"class = "header_navitem" style ="text-decoration: none;"><i class="fa-solid fa-cart-shopping" style = "margin: 10px"></i> Your Cart</a> *@
+               
 
                 </div>
+                  @if (SignInManager.IsSignedIn(User))
+                {   
+                    <div class ="header_navitem header_navitem_more">
+                        <p style = "display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px;   margin-inline-end: 0px;">Hello @UserManager.GetUserName(User)!</p>
+                        @if (this.User.IsInRole("Admin") && !this.User.IsInRole("StoreOwner")){
+                        <ul class ="header_navitem_sublist">
+                            <li> <a id="manage" class="header_navlink" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">Profile</a></li>
+                            <li> <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">Admin Page</a></li>
+                            <li> <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
+                                 <button id="logout" type="submit" class="header_navlink" style ="text-decoration: none; background-color: #272626; margin-right: 40px; color: white">Logout</button>
+                                 </form>
+                            </li>
+                        </ul>
+                        }else if (this.User.IsInRole("StoreOwner") && !this.User.IsInRole("Admin")){
+                        <ul class ="header_navitem_sublist">
+                            <li> <a id="manage" class="header_navlink" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">Profile</a></li>
+                            <li> <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">StoreOwner Page</a></li>
+                            <li> <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
+                                 <button id="logout" type="submit" class="header_navlink" style ="text-decoration: none; background-color: #272626; margin-right: 40px; color: white">Logout</button>
+                                 </form>
+                            </li>
+                        </ul>
+                        }else if (this.User.IsInRole("StoreOwner") && this.User.IsInRole("Admin") && this.User.IsInRole("Customer")){
+                            <ul class ="header_navitem_sublist">
+                            <li> <a id="manage" class="header_navlink" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">Profile</a></li>
+<li> <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">Admin Page</a></li>
+                            <li> <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">StoreOwner Page</a></li>
+                            <li> <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
+                                 <button id="logout" type="submit" class="header_navlink" style ="text-decoration: none; background-color: #272626; margin-right: 40px; color: white">Logout</button>
+                                 </form>
+                            </li>
+                        </ul>
+                        }else{
+                        <ul class ="header_navitem_sublist">
+                            <li> <a id="manage" class="header_navlink" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">Profile</a></li>
+                            <li> <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
+                                 <button id="logout" type="submit" class="header_navlink" style ="text-decoration: none; background-color: #272626; margin-right: 40px; color: white">Logout</button>
+                                 </form>
+                            </li>
+                        </ul>
+                        }
+                    </div>       
+                }
+                else
+                {   
+                    <a class="header_navitem" id="login" asp-area="Identity" asp-page="/Account/Login" style ="text-decoration: none;">Login</a>
+                    <a class="header_navitem" id="register" asp-area="Identity" asp-page="/Account/Register" style ="text-decoration: none;">Register</a>
+                }       
+            </div>
+        </div>
+
+
+
                 <a class="btn btn-outline-dark" asp-area="" asp-controller="Books" asp-action="Checkout"
                     style="padding:3px;">
                     <img src="~/images/cart.png" style="width:25px !important;height:25px;display:inline-block;"></img>
