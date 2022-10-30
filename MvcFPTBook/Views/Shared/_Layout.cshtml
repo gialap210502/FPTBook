@@ -30,9 +30,9 @@
     <link rel="stylesheet" href="~/MvcFPTBook.styles.css" asp-append-version="true" />
 </head>
 
-<body class="p-3 mb-2 bg-info text-dark">
+<body class="text-lg-start text-dark">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 "
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow "
             style="background-color: #e3f2fd;">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img
@@ -62,81 +62,99 @@
                     </ul>
                     <div class ="header_login">
                  @* <a href="Book/Checkout"class = "header_navitem" style ="text-decoration: none;"><i class="fa-solid fa-cart-shopping" style = "margin: 10px"></i> Your Cart</a> *@
-               
-
-                </div>
+                    </div>
                   @if (SignInManager.IsSignedIn(User))
                 {   
                     <div class ="header_navitem header_navitem_more">
-                        <p style = "display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px;   margin-inline-end: 0px;">Hello @UserManager.GetUserName(User)!</p>
                         @if (this.User.IsInRole("Admin") && !this.User.IsInRole("StoreOwner")){
-                        <ul class ="header_navitem_sublist">
-                            <li> <a id="manage" class="header_navlink" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">Profile</a></li>
-                            <li> <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">Admin Page</a></li>
-                            <li> <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
-                                 <button id="logout" type="submit" class="header_navlink" style ="text-decoration: none; background-color: #272626; margin-right: 40px; color: white">Logout</button>
-                                 </form>
-                            </li>
-                        </ul>
+                            <a id="manage" class="btn btn-primary" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">@UserManager.GetUserName(User)</a>
+                            <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">Admin Page</a>
                         }else if (this.User.IsInRole("StoreOwner") && !this.User.IsInRole("Admin")){
-                        <ul class ="header_navitem_sublist">
-                            <li> <a id="manage" class="header_navlink" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">Profile</a></li>
-                            <li> <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">StoreOwner Page</a></li>
-                            <li> <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
-                                 <button id="logout" type="submit" class="header_navlink" style ="text-decoration: none; background-color: #272626; margin-right: 40px; color: white">Logout</button>
-                                 </form>
-                            </li>
-                        </ul>
+                            <a id="manage" class="btn btn-primary" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">@UserManager.GetUserName(User)</a>
+                            <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">StoreOwner Page</a>
                         }else if (this.User.IsInRole("StoreOwner") && this.User.IsInRole("Admin") && this.User.IsInRole("Customer")){
-                            <ul class ="header_navitem_sublist">
-                            <li> <a id="manage" class="header_navlink" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">Profile</a></li>
-<li> <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">Admin Page</a></li>
-                            <li> <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">StoreOwner Page</a></li>
-                            <li> <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
-                                 <button id="logout" type="submit" class="header_navlink" style ="text-decoration: none; background-color: #272626; margin-right: 40px; color: white">Logout</button>
-                                 </form>
-                            </li>
-                        </ul>
+                            <a id="manage" class="btn btn-primary" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">@UserManager.GetUserName(User)</a>
+                            <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">Admin Page</a>
+                            <a id="" class="header_navlink" asp-controller = "Categorys" asp-action ="Index"  style ="text-decoration: none;">StoreOwner Page</a>
                         }else{
-                        <ul class ="header_navitem_sublist">
-                            <li> <a id="manage" class="header_navlink" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">Profile</a></li>
-                            <li> <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
-                                 <button id="logout" type="submit" class="header_navlink" style ="text-decoration: none; background-color: #272626; margin-right: 40px; color: white">Logout</button>
-                                 </form>
-                            </li>
-                        </ul>
+                             <a id="manage" class="btn btn-primary" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style ="text-decoration: none;">@UserManager.GetUserName(User)</a>
                         }
                     </div>       
                 }
                 else
                 {   
-                    <a class="header_navitem" id="login" asp-area="Identity" asp-page="/Account/Login" style ="text-decoration: none;">Login</a>
-                    <a class="header_navitem" id="register" asp-area="Identity" asp-page="/Account/Register" style ="text-decoration: none;">Register</a>
+                    <a class="btn btn-success" id="login" asp-area="Identity" asp-page="/Account/Login" style ="text-decoration: none;">Login</a>
+                    <a class="btn btn-success" id="register" asp-area="Identity" asp-page="/Account/Register" style ="text-decoration: none;">Register</a>
                 }       
             </div>
         </div>
-
-
-
                 <a class="btn btn-outline-dark" asp-area="" asp-controller="Books" asp-action="Checkout"
-                    style="padding:3px;">
+                    style="padding:2px;">
                     <img src="~/images/cart.png" style="width:25px !important;height:25px;display:inline-block;"></img>
                     <span class="badge bg-dark text-white ms-1 rounded-pill">@count</span>
                 </a>
-            </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" >
             @RenderBody()
         </main>
-    </div>
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #45526e"
+          >
+    <!-- Grid container -->
+    <div class="container">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              FPTBook
+            </h6>
+            <p>
+              A book is a collection of sheets of paper knotted or glued together on one side with handwritten or printed text or images. A book page is one side of a sheet of these sheets. An e-book or e-book is a book that solely includes content in electronic form and can be accessed on a device having a screen.
+            </p>
+          </div>
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - MvcFPTBook - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
         </div>
-    </footer>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-3">
+
+      <!-- Section: Copyright -->
+      <section class="p-3 pt-0">
+        <div class="row d-flex align-items-center">
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8 text-center text-md-start">
+            <!-- Copyright -->
+            <div class="p-3">
+              © 2022 Copyright: FPTBook
+            </div>
+            <!-- Copyright -->
+          </div>
+          <!-- Grid column -->
+        </div>
+      </section>
+      <!-- Section: Copyright -->
+    </div>
+    <!-- Grid container -->
+  </footer>
+  <!-- Footer -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -33,8 +33,39 @@
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
             <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+
         </form>
+        @if (this.User.IsInRole("Admin") && !this.User.IsInRole("StoreOwner"))
+        {
+            <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout"
+            asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
+                <button id="logout" type="submit" class="w-100 btn btn-lg btn-danger" style="width: 470px">Logout</button>
+            </form>
+        }
+        else if (this.User.IsInRole("StoreOwner") && !this.User.IsInRole("Admin"))
+        {
+            <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout"
+            asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
+                <button id="logout" type="submit" class="w-100 btn btn-lg btn-danger" style="width: 470px">Logout</button>
+            </form>
+        }
+        else if (this.User.IsInRole("StoreOwner") && this.User.IsInRole("Admin") && this.User.IsInRole("Customer"))
+        {
+            <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout"
+            asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
+                <button id="logout" type="submit" class="w-100 btn btn-lg btn-danger" style="width: 470px">Logout</button>
+            </form>
+        }
+        else
+        {
+            <form id="logoutForm" class="header_navlink" asp-area="Identity" asp-page="/Account/Logout"
+            asp-route-returnUrl="@Url.Action("", "", new { area = "" })">
+                <button id="logout" type="submit" class="w-100 btn btn-lg btn-danger" style="width: 470px">Logout</button>
+            </form>
+        }
     </div>
+
+
 </div>
 
 @section Scripts {
