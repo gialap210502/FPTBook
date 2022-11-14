@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj": {}
+    "D:\\cccc\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj": {
+    "D:\\cccc\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj",
+        "projectUniqueName": "D:\\cccc\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj",
         "projectName": "MvcFPTBook",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\1670\\FPTBook\\MvcFPTBook\\obj\\",
+        "projectPath": "D:\\cccc\\FPTBook\\MvcFPTBook\\MvcFPTBook.csproj",
+        "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
+        "outputPath": "D:\\cccc\\FPTBook\\MvcFPTBook\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,12 +87,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.10, 6.0.10]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
